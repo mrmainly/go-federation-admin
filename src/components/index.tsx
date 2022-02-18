@@ -1,9 +1,10 @@
 import Header from './header'
-import UsersTable from './table/UsersTable'
-import TourneyTable from './table/TourneyTable'
+import UsersTable from './tables/UsersTable'
+import TourneyTable from './tables/TourneyTable'
 import SearchInput from './searchInput'
 import MyButton from './button'
 import MyText from './text'
+import MenuTab from './menuTab'
 
 export {
     Header,
@@ -11,6 +12,7 @@ export {
     TourneyTable,
     SearchInput,
     MyButton,
-    MyText
+    MyText,
+    MenuTab
 }
 

@@ -1,7 +1,7 @@
 enum ROUTES {
-    HOME = '/',
     TOURNAMENTS = '/tournaments',
-    USERS = '/users',
+    USERS = '/',
+    CREATETOURNAMENTS = '/create-tournaments'
 }
 
 export default ROUTES;

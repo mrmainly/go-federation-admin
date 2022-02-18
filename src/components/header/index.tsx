@@ -47,7 +47,7 @@ const Header = () => {
     }, []);
     const Logo = () => {
         return (
-            <MenuItem sx={{ width: 'max-content' }} onClick={() => navigate(ROUTES.HOME)}>
+            <MenuItem sx={{ width: 'max-content' }} onClick={() => navigate(ROUTES.USERS)}>
                 <Img src={'/img/rfg_logo_small.svg'} />
             </MenuItem>
         )

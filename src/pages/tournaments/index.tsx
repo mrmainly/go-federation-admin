@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { FormControl, Select, InputLabel, MenuItem, Box } from '@mui/material'
 import { styled } from '@mui/system'
+import { useNavigate } from 'react-router-dom'
 
 import { TourneyTable, SearchInput, MyButton, MyText } from '../../components'
 
@@ -26,6 +27,7 @@ const SearchBox = styled(Box)(({ theme }) => ({
 
 const Tourney = () => {
     const [select, setSelect] = useState('')
+    const navigate = useNavigate()
     const arr = [
         {
             label: 'EGS2016',
@@ -44,7 +46,7 @@ const Tourney = () => {
                 <InputBox>
                     <SearchInput placeholder="Поиск" />
                 </InputBox>
-                <MyButton>
+                <MyButton onClick={() => navigate('/create-tournaments')}>
                     Создать
                 </MyButton>
             </SearchBox>
