@@ -45,7 +45,7 @@ export default function MenuTab() {
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                <Tabs value={value} onChange={handleChange} aria-label="scrollable auto tabs example" scrollButtons="auto" variant="scrollable">
                     <Tab label="Редактор" {...a11yProps(0)} />
                     <Tab label="Доступ" {...a11yProps(1)} />
                     <Tab label="Форма регистрации" {...a11yProps(2)} disabled />

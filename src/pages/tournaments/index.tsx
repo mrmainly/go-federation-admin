@@ -4,7 +4,7 @@ import { FormControl, Select, InputLabel, MenuItem, Box } from '@mui/material'
 import { styled } from '@mui/system'
 import { useNavigate } from 'react-router-dom'
 
-import { TourneyTable, SearchInput, MyButton, MyText } from '../../components'
+import { TournamentsTable, SearchInput, MyButton, MyText } from '../../components'
 
 const InputBox = styled(Box)(({ theme }) => ({
     width: 700,
@@ -25,7 +25,7 @@ const SearchBox = styled(Box)(({ theme }) => ({
     },
 }))
 
-const Tourney = () => {
+const Tournaments = () => {
     const [select, setSelect] = useState('')
     const navigate = useNavigate()
     const arr = [
@@ -70,9 +70,9 @@ const Tourney = () => {
                     ))}
                 </Select>
             </FormControl>
-            <TourneyTable />
+            <TournamentsTable />
         </div>
     )
 }
 
-export default Tourney
+export default Tournaments
