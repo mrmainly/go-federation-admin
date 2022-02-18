@@ -5,6 +5,8 @@ import SearchInput from './searchInput'
 import MyButton from './button'
 import MyText from './text'
 import MenuTab from './menuTab'
+import CreateTournamentsTable from './tables/CreateTournamentsTable'
+import MySelect from './select'
 
 export {
     Header,
@@ -13,6 +15,8 @@ export {
     SearchInput,
     MyButton,
     MyText,
-    MenuTab
+    MenuTab,
+    CreateTournamentsTable,
+    MySelect
 }
 

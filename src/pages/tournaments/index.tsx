@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { FormControl, Select, InputLabel, MenuItem, Box } from '@mui/material'
+import { Box } from '@mui/material'
 import { styled } from '@mui/system'
 import { useNavigate } from 'react-router-dom'
 
-import { TournamentsTable, SearchInput, MyButton, MyText } from '../../components'
+import { TournamentsTable, SearchInput, MyButton, MyText, MySelect } from '../../components'
 
 const InputBox = styled(Box)(({ theme }) => ({
     width: 700,
@@ -26,7 +26,6 @@ const SearchBox = styled(Box)(({ theme }) => ({
 }))
 
 const Tournaments = () => {
-    const [select, setSelect] = useState('')
     const navigate = useNavigate()
     const arr = [
         {
@@ -50,26 +49,7 @@ const Tournaments = () => {
                     Создать
                 </MyButton>
             </SearchBox>
-            <FormControl sx={{ width: 100, mb: 3, mt: 1 }}>
-                <InputLabel id="demo-simple-select-label">Все</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={select}
-                    onChange={(e) => {
-                        setSelect(e.target.value)
-                    }}
-                    size="small"
-                    variant="standard"
-                    style={{ color: 'black' }}
-                >
-                    {arr.map(({ label, value }) => (
-                        <MenuItem key={label} value={value}>
-                            {label}
-                        </MenuItem>
-                    ))}
-                </Select>
-            </FormControl>
+            <MySelect title="Все" options={arr} sx={{ width: 100, mt: 2, mb: 2 }} />
             <TournamentsTable />
         </div>
     )

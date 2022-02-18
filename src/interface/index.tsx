@@ -23,9 +23,17 @@ interface MyTextProps {
     variant?: any
 }
 
+interface MySelectProps {
+    variant?: string,
+    options: any,
+    title: string,
+    sx?: any
+}
+
 
 export type {
     SearchInputProps,
     ButtonProps,
-    MyTextProps
+    MyTextProps,
+    MySelectProps
 }

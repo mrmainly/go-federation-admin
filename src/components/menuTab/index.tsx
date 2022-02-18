@@ -2,6 +2,9 @@ import * as React from 'react';
 
 import { Tabs, Tab, Typography, Box } from '@mui/material'
 
+import { CreateTournamentsTable } from '..'
+import { AccessScreen } from '../createTournamentsScreen'
+
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
@@ -57,7 +60,7 @@ export default function MenuTab() {
                 Item One ihkhk
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Item Two
+                <AccessScreen />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 Item Three
@@ -66,7 +69,7 @@ export default function MenuTab() {
                 Item Three ds
             </TabPanel>
             <TabPanel value={value} index={4}>
-                Item Threeff
+                <CreateTournamentsTable />
             </TabPanel>
         </Box>
     );
