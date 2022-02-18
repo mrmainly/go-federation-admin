@@ -43,7 +43,7 @@ const Header = () => {
                             Пользователи
                         </MenuItem>
                     </LinkRouter>
-                    <LinkRouter to={ROUTES.TOURNEY}>
+                    <LinkRouter to={ROUTES.TOURNAMENTS}>
                         <MenuItem>
                             Турниры
                         </MenuItem>

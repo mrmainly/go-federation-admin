@@ -1,6 +1,6 @@
 enum ROUTES {
     HOME = '/',
-    TOURNEY = '/tourney',
+    TOURNAMENTS = '/tournaments',
     USERS = '/users',
 }
 

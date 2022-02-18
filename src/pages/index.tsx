@@ -1,9 +1,9 @@
 import HomePage from './home'
-import Tourney from './tourney'
+import Tournaments from './tournaments'
 import Users from './users'
 
 export {
     HomePage,
-    Tourney,
+    Tournaments,
     Users
 }
