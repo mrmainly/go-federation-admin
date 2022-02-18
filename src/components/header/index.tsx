@@ -21,12 +21,13 @@ const Img = styled('img')({
 
 const MyContainer = styled(Container)({
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 })
 
 const LinkRouter = styled(Link)({
     textDecoration: 'none',
     color: 'black',
+    marginLeft: 5
 })
 
 const Header = () => {
@@ -47,9 +48,9 @@ const Header = () => {
     }, []);
     const Logo = () => {
         return (
-            <MenuItem sx={{ width: 'max-content' }} onClick={() => navigate(ROUTES.USERS)}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Img src={'/img/rfg_logo_small.svg'} />
-            </MenuItem>
+            </Box>
         )
     }
     const Mobile = () => {
