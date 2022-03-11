@@ -27,7 +27,27 @@ interface MySelectProps {
     variant?: string,
     options: any,
     title: string,
-    sx?: any
+    sx?: any,
+    placeholder?: string
+}
+
+interface FormProps {
+    children: any,
+    sx?: any,
+    onSubmit?: any
+}
+
+interface InputProps {
+    ref: any,
+    label?: any,
+    sx?: any,
+    variant: any,
+    rows?: number,
+    id?: any,
+    multiline?: any,
+    type?: string,
+    required?: any,
+    InputLabelProps?: any
 }
 
 
@@ -35,5 +55,7 @@ export type {
     SearchInputProps,
     ButtonProps,
     MyTextProps,
-    MySelectProps
+    MySelectProps,
+    FormProps,
+    InputProps
 }

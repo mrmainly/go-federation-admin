@@ -3,7 +3,7 @@ import React from 'react'
 import { OutlinedInput, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 
-import { SearchInputProps } from '../../interface';
+import { SearchInputProps } from '../../../interface';
 
 const SearchInput: React.FunctionComponent<SearchInputProps> = ({ placeholder }) => {
     return (

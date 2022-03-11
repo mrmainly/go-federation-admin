@@ -1,12 +1,14 @@
 import Header from './header'
 import UsersTable from './tables/UsersTable'
 import TournamentsTable from './tables/TournamentsTable'
-import SearchInput from './searchInput'
-import MyButton from './button'
+import SearchInput from './UI/searchInput'
+import MyButton from './UI/button'
 import MyText from './text'
 import MenuTab from './menuTab'
 import CreateTournamentsTable from './tables/CreateTournamentsTable'
-import MySelect from './select'
+import MySelect from './UI/select'
+import Input from './UI/input'
+import { Form } from './UI/form'
 
 export {
     Header,
@@ -17,6 +19,8 @@ export {
     MyText,
     MenuTab,
     CreateTournamentsTable,
-    MySelect
+    MySelect,
+    Input,
+    Form
 }
 

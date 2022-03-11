@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MyButton, MySelect } from '../..'
+import { MyButton, MySelect } from '../../components'
 
 const AccessScreen = () => {
     const arr = [

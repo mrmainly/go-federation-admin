@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Tabs, Tab, Typography, Box } from '@mui/material'
 
 import { CreateTournamentsTable } from '..'
-import { AccessScreen } from '../createTournamentsScreen'
+import { AccessScreen, Editor } from '../../createTournamentsScreen'
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -57,7 +57,7 @@ export default function MenuTab() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                Item One ihkhk
+                <Editor />
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <AccessScreen />

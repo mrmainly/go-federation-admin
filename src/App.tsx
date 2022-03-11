@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import Layout from './layout'
 import { Tournaments, Users, CreateTournaments } from './pages'
