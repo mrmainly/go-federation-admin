@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FormControlLabel, Checkbox } from '@mui/material'
 
 import { UsersTable, SearchInput } from '../../components'
+import api from '../../api'
 
 const Users = () => {
+    useEffect(() => {
+        api.getProfiles().then((profile: any) => {
+            console.log('profile', profile)
+        })
+    }, [])
     return (
         <div>
             <SearchInput placeholder="Поиск" />

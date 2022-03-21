@@ -19,36 +19,6 @@ class Api {
         })
     }
 
-    // AUTH
-
-    signin({ username, password }: { username: string, password: string }) {
-        return fetch(
-            this._url + '/api/v1/users/login',
-            {
-                method: 'POST',
-                headers: this._headers,
-                body: JSON.stringify({
-                    username, password
-                })
-            }
-        ).then(this.checkResponse)
-    }
-
-    signup({ username, password, email }: { username: string, password: string, email: string }) {
-        return fetch(
-            this._url + '/api/v1/users/register',
-            {
-                method: 'POST',
-                headers: this._headers,
-                body: JSON.stringify({
-                    username, password, email
-                })
-            }
-        ).then(this.checkResponse)
-    }
-
-    // BLOG
-
     getPosts() {
         return fetch(
             this._url + '/api/v1/blog/posts',
@@ -69,21 +39,35 @@ class Api {
         ).then(this.checkResponse)
     }
 
-    commentPost(id: number, text: string) {
+    getProfiles() {
+        const token = 'b729f91892343987a7a75adb866f66db0f75dcbd'
+        return fetch(
+            this._url + '/api/v1/profiles/',
+            {
+                method: 'GET',
+                headers: {
+                    ...this._headers,
+                    'authorization': `Token ${token}`
+                }
+            }
+        ).then(this.checkResponse)
+    }
+
+    createTournaments(data: object) {
         const token = localStorage.getItem('token')
         return fetch(
-            this._url + `/api/v1/blog/posts/${id}/comments`,
+            this._url + `/api/v1/tournaments/create`,
             {
                 method: 'POST',
                 headers: {
                     ...this._headers,
                     'authorization': `Token ${token}`
                 },
-                body: JSON.stringify({ text })
+                body: JSON.stringify(data)
             }
         ).then(this.checkResponse)
     }
-
+    //
     getMenu() {
         return fetch(
             this._url + '/api/v1/blog/menu',
@@ -162,7 +146,7 @@ class Api {
     }
 }
 
-const defaultHost = process.env.REACT_APP_API_KEY || 'http://localhost'
+const defaultHost = process.env.REACT_APP_API_KEY || 'https://federation.goykt.ru'
 
 const defaultHeaders = {
     'content-type': 'application/json',

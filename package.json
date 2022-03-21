@@ -16,6 +16,7 @@
     "@types/node": "^16.11.25",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "draft-convert": "^2.1.12",
     "draft-js": "^0.11.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/draft-convert": "^2.1.4",
     "@types/react-draft-wysiwyg": "^1.13.4"
   }
 }

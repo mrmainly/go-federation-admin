@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef } from 'react'
 
 import { TextField, MenuItem } from '@mui/material'
+import { styled } from '@mui/system'
 
 import { MySelectProps } from '../../../interface'
 
-const MySelect: React.FunctionComponent<MySelectProps> = ({ options, variant, title, ...props }) => {
+// const Option = styled('option')({
+//     cursor: 'pointer',
+//     padding: 10
+// })
+
+export default forwardRef<HTMLInputElement, MySelectProps>(function MySelect({ options, defaultValue, variant, title, ref, ...props }) {
     return (
         <TextField
             id="filled-select-currency-native"
@@ -13,13 +19,13 @@ const MySelect: React.FunctionComponent<MySelectProps> = ({ options, variant, ti
             fullWidth
             variant="outlined"
             margin="normal"
+            defaultValue={defaultValue}
+            inputRef={ref}
             {...props}
         >
             {options ? options.map((item: any, index: number) => (
-                <option key={index} value={item.value}> {item.label}</option>
+                <MenuItem key={index} value={item}>{item}</MenuItem>
             )) : ''}
         </TextField>
     )
-}
-
-export default MySelect
+})

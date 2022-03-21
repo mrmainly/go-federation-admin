@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Tabs, Tab, Typography, Box } from '@mui/material'
 
 import { CreateTournamentsTable } from '..'
-import { AccessScreen, Editor } from '../../createTournamentsScreen'
+import { AccessScreen, Editor, Applications, RegisterForm } from '../../createTournamentsScreen'
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -24,7 +24,7 @@ function TabPanel(props: TabPanelProps) {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
+                    {children}
                 </Box>
             )}
         </div>
@@ -51,8 +51,8 @@ export default function MenuTab() {
                 <Tabs value={value} onChange={handleChange} aria-label="scrollable auto tabs example" scrollButtons="auto" variant="scrollable">
                     <Tab label="Редактор" {...a11yProps(0)} />
                     <Tab label="Доступ" {...a11yProps(1)} />
-                    <Tab label="Форма регистрации" {...a11yProps(2)} disabled />
-                    <Tab label="Заявки" {...a11yProps(3)} disabled />
+                    <Tab label="Форма регистрации" {...a11yProps(2)} />
+                    <Tab label="Заявки" {...a11yProps(3)} />
                     <Tab label="Таблица" {...a11yProps(4)} />
                 </Tabs>
             </Box>
@@ -63,10 +63,10 @@ export default function MenuTab() {
                 <AccessScreen />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <RegisterForm />
             </TabPanel>
             <TabPanel value={value} index={3}>
-                Item Three ds
+                <Applications />
             </TabPanel>
             <TabPanel value={value} index={4}>
                 <CreateTournamentsTable />

@@ -28,7 +28,9 @@ interface MySelectProps {
     options: any,
     title: string,
     sx?: any,
-    placeholder?: string
+    placeholder?: string,
+    ref?: any,
+    defaultValue: string
 }
 
 interface FormProps {

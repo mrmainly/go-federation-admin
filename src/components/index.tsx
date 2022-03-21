@@ -9,6 +9,7 @@ import CreateTournamentsTable from './tables/CreateTournamentsTable'
 import MySelect from './UI/select'
 import Input from './UI/input'
 import { Form } from './UI/form'
+import Notification from './notification'
 
 export {
     Header,
@@ -21,6 +22,7 @@ export {
     CreateTournamentsTable,
     MySelect,
     Input,
-    Form
+    Form,
+    Notification
 }
 

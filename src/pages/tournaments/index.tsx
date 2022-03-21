@@ -27,16 +27,7 @@ const SearchBox = styled(Box)(({ theme }) => ({
 
 const Tournaments = () => {
     const navigate = useNavigate()
-    const arr = [
-        {
-            label: 'EGS2016',
-            value: 1
-        },
-        {
-            label: 'hidden',
-            value: 2
-        },
-    ]
+    const arr = ['asd', 'asdd']
 
     return (
         <div>
@@ -49,7 +40,7 @@ const Tournaments = () => {
                     Создать
                 </MyButton>
             </SearchBox>
-            <MySelect title="Все" options={arr} sx={{ width: 100, mt: 2, mb: 2 }} />
+            <MySelect title="Все" defaultValue="asd" options={arr} sx={{ width: 100, mt: 2, mb: 2 }} />
             <TournamentsTable />
         </div>
     )
