@@ -11,6 +11,9 @@ import Input from './UI/input'
 import { Form } from './UI/form'
 import Notification from './notification'
 
+import UserName from './elements_form_registration/UserName'
+import TextFieldItem from './elements_form_registration/TextFieldItem'
+
 export {
     Header,
     UsersTable,
@@ -23,6 +26,8 @@ export {
     MySelect,
     Input,
     Form,
-    Notification
+    Notification,
+    UserName,
+    TextFieldItem
 }
 

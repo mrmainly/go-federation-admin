@@ -9,7 +9,15 @@ interface ButtonProps {
     variant?: string,
     style?: any,
     sx?: any,
-    color?: any
+    color?: any,
+    size?: any
+}
+
+interface userNameProps {
+    handleDelete: any,
+    value: any,
+    id: number,
+    handleText: any
 }
 
 interface MyTextProps {
@@ -49,7 +57,8 @@ interface InputProps {
     multiline?: any,
     type?: string,
     required?: any,
-    InputLabelProps?: any
+    InputLabelProps?: any,
+    size?: any
 }
 
 
@@ -59,5 +68,6 @@ export type {
     MyTextProps,
     MySelectProps,
     FormProps,
-    InputProps
+    InputProps,
+    userNameProps
 }

@@ -78,10 +78,10 @@ class Api {
         ).then(this.checkResponse)
     }
 
-    getUser(id: number) {
+    getPartner() {
         // const token = localStorage.getItem('token')
         return fetch(
-            this._url + `/api/v1/profiles/${id}`,
+            this._url + `/api/v1/users/search`,
             {
                 method: 'GET',
                 headers: {
