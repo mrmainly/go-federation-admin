@@ -17,7 +17,10 @@ interface userNameProps {
     handleDelete: any,
     value: any,
     id: number,
-    handleText: any
+    handleText: any,
+    value2?: any,
+    type: string,
+    handleText2?: any,
 }
 
 interface MyTextProps {

@@ -26,7 +26,8 @@ const EditorScreen = () => {
             city: data.city,
             category: data.category,
             type: data.type
-        }).then(() => {
+        }).then((res: any) => {
+            localStorage.setItem('tournamentId', `${res.id}`);
             dispatch({ type: 'notification', payload: { text: 'Турнир добавлен', status: 'success', active: true } })
         })
     }

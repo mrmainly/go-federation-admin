@@ -67,6 +67,20 @@ class Api {
             }
         ).then(this.checkResponse)
     }
+    sendTournamentStaff(username: string, id: string | null) {
+        const token = localStorage.getItem('token')
+        return fetch(
+            this._url + `/api/v1/tournaments/${id}/staff/add`,
+            {
+                method: 'POST',
+                headers: {
+                    ...this._headers,
+                    'authorization': `Token ${token}`
+                },
+                body: JSON.stringify({ username: username })
+            }
+        ).then(this.checkResponse)
+    }
     //
     getMenu() {
         return fetch(
@@ -101,45 +115,6 @@ class Api {
                 headers: {
                     ...this._headers,
                     'authorization': `Token ${token}`
-                }
-            }
-        ).then(this.checkResponse)
-    }
-
-    // PLAYERS
-    getPlayers() {
-        return fetch(
-            this._url + `/api/v1/profiles/`,
-            {
-                method: 'GET',
-                headers: {
-                    ...this._headers,
-                }
-            }
-        ).then(this.checkResponse)
-    }
-
-    // OTHER
-    getSlider() {
-        return fetch(
-            this._url + `/api/v1/blog/slider`,
-            {
-                method: 'GET',
-                headers: {
-                    ...this._headers,
-                }
-            }
-        ).then(this.checkResponse)
-    }
-
-    //FORUM
-    getForum() {
-        return fetch(
-            this._url + `/api/v1/forum/`,
-            {
-                method: 'GET',
-                headers: {
-                    ...this._headers,
                 }
             }
         ).then(this.checkResponse)

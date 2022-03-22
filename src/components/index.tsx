@@ -10,9 +10,7 @@ import MySelect from './UI/select'
 import Input from './UI/input'
 import { Form } from './UI/form'
 import Notification from './notification'
-
-import UserName from './elements_form_registration/UserName'
-import TextFieldItem from './elements_form_registration/TextFieldItem'
+import Elements_form_registration from './elements_form_registration'
 
 export {
     Header,
@@ -27,7 +25,6 @@ export {
     Input,
     Form,
     Notification,
-    UserName,
-    TextFieldItem
+    Elements_form_registration
 }
 

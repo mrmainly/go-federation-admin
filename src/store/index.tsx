@@ -6,6 +6,9 @@ export const defaultStore = {
         text: '',
         active: false
     },
+    tournamentId: {
+        id: 0
+    },
 };
 
 
