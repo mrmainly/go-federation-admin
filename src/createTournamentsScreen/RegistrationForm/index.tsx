@@ -40,19 +40,29 @@ const RegistrationForm = () => {
     };
 
     const handleText2 = (id: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
-        let user = [...userField]
-        userField[id].value2 = e.target.value
+        let text = [...userField]
+        userField[id].description = e.target.value
         setUserField(
-            user
+            text
         )
     }
 
     const handleText = (id: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
-        let user = [...userField]
+        let text = [...userField]
         // userField[id].value2 = e.target.value
-        userField[id].value = e.target.value
+        userField[id].title = e.target.value
         setUserField(
-            user
+            text
+        )
+    }
+
+    const handleCheckbox = (id: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+        let text = [...userField]
+        // userField[id].value2 = e.target.value
+        userField[id].required = e.target.checked
+        console.log(userField[id].required)
+        setUserField(
+            text
         )
     }
     const adduserfield = async (type: string) => {
@@ -61,17 +71,27 @@ const RegistrationForm = () => {
         switch (type) {
             case 'user':
                 newUserField = userField.concat({
-                    value: '',
+                    title: '',
                     type: type,
                     id: idUserField,
                 })
                 break;
             case 'textfield':
                 newUserField = userField.concat({
-                    value: '',
-                    value2: '',
+                    title: '',
+                    description: '',
                     type: type,
                     id: idUserField,
+                    required: false
+                })
+                break;
+            case 'datePicker':
+                newUserField = userField.concat({
+                    title: '',
+                    description: '',
+                    type: type,
+                    id: idUserField,
+                    required: false
                 })
                 break;
             default:
@@ -109,7 +129,18 @@ const RegistrationForm = () => {
             <Grid item lg={6} xl={6} md={6} sm={12} xs={12}>
                 <GridInsideItem2>
                     {userField.map((item: any, index: number) => (
-                        <Elements_form_registration key={index} id={item.id} value={item.value} handleText={handleText} handleDelete={handleDelete} type={item.type} value2={item.value2} handleText2={handleText2} />
+                        <Elements_form_registration
+                            key={index}
+                            id={item.id}
+                            title={item.title}
+                            handleText={handleText}
+                            handleDelete={handleDelete}
+                            type={item.type}
+                            description={item.description}
+                            handleText2={handleText2}
+                            required={item.required}
+                            handleCheckbox={handleCheckbox}
+                        />
                     ))}
                     {/* <TextFieldItem /> */}
                     <Button
@@ -134,8 +165,8 @@ const RegistrationForm = () => {
                     >
                         <MenuItem onClick={() => adduserfield("user")}>Игрок</MenuItem>
                         <MenuItem onClick={() => adduserfield("textfield")}>Текстовое поле</MenuItem>
-                        {/* <MenuItem onClick={() => adduserfield()}>Дата</MenuItem>
-                        <MenuItem onClick={() => adduserfield()}>Список</MenuItem>
+                        <MenuItem onClick={() => adduserfield("datePicker")}>Дата</MenuItem>
+                        {/* <MenuItem onClick={() => adduserfield()}>Список</MenuItem>
                         <MenuItem onClick={() => adduserfield()}>Чекбокс</MenuItem> */}
                     </Menu>
                 </GridInsideItem2>

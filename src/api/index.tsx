@@ -9,7 +9,6 @@ class Api {
 
     checkResponse(res: Response) {
         console.log('RESPONSE', res);
-
         return new Promise((resolve, reject) => {
             if (res.status === 204) {
                 return resolve(res)
@@ -18,7 +17,6 @@ class Api {
             res.json().then(data => func(data))
         })
     }
-
     getPosts() {
         return fetch(
             this._url + '/api/v1/blog/posts',
@@ -28,7 +26,6 @@ class Api {
             }
         ).then(this.checkResponse)
     }
-
     getPost(id: number) {
         return fetch(
             this._url + `/api/v1/blog/posts/${id}`,
@@ -38,7 +35,6 @@ class Api {
             }
         ).then(this.checkResponse)
     }
-
     getProfiles() {
         const token = 'b729f91892343987a7a75adb866f66db0f75dcbd'
         return fetch(
@@ -52,7 +48,6 @@ class Api {
             }
         ).then(this.checkResponse)
     }
-
     createTournaments(data: object) {
         const token = localStorage.getItem('token')
         return fetch(
@@ -81,7 +76,6 @@ class Api {
             }
         ).then(this.checkResponse)
     }
-    //
     getMenu() {
         return fetch(
             this._url + '/api/v1/blog/menu',
@@ -93,19 +87,16 @@ class Api {
     }
 
     getPartner() {
-        // const token = localStorage.getItem('token')
         return fetch(
             this._url + `/api/v1/users/search`,
             {
                 method: 'GET',
                 headers: {
                     ...this._headers,
-                    // 'authorization': `Token ${token}`
                 }
             }
         ).then(this.checkResponse)
     }
-    // USER
     getUserData() {
         const token = localStorage.getItem('token')
         return fetch(

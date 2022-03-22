@@ -22,7 +22,6 @@ export default function TourneyTable() {
                         <TableCell>Даты проведения</TableCell>
                         <TableCell>Название</TableCell>
                         <TableCell>Город</TableCell>
-                        <TableCell>Эфф.время</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

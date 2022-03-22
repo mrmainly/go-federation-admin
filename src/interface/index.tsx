@@ -15,12 +15,14 @@ interface ButtonProps {
 
 interface userNameProps {
     handleDelete: any,
-    value: any,
+    title: any,
     id: number,
     handleText: any,
-    value2?: any,
+    description?: any,
     type: string,
     handleText2?: any,
+    required?: boolean,
+    handleCheckbox?: any
 }
 
 interface MyTextProps {
