@@ -37,7 +37,7 @@ const Elements_form_registration: React.FC<userNameProps> = ({ id, handleText, h
                             <Button sx={{ bgcolor: 'red', color: 'white' }} variant="contained" size="small" onClick={() => handleDelete(id)}>Удалить</Button>
                         </Box>
                         <MyInput label="Название" variant="outlined" value={title} onChange={handleText(id)} />
-                        <MyInput label="Название" variant="outlined" value={description} onChange={handleText2(id)} />
+                        <MyInput label="Описание" variant="outlined" value={description} onChange={handleText2(id)} />
                     </Root>
                     : type == 'datePicker' ?
                         <Root>
@@ -51,8 +51,25 @@ const Elements_form_registration: React.FC<userNameProps> = ({ id, handleText, h
                                 <FormControlLabel control={<Checkbox checked={required} onChange={handleCheckbox(id)} />} label="Обязательное поле" />
                             </FormGroup>
                         </Root>
-                        : ''}
-        </Box>
+                        : type == 'checkbox' ?
+                            <Root >
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <MyText>Чекбокс</MyText>
+                                    <Button sx={{ bgcolor: 'red', color: 'white' }} variant="contained" size="small" onClick={() => handleDelete(id)}>Удалить</Button>
+                                </Box>
+                                <MyInput label="Название" variant="outlined" value={description} onChange={handleText2(id)} />
+                            </Root>
+                            : type == 'list' ?
+                                <Root >
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <MyText>Список</MyText>
+                                        <Button sx={{ bgcolor: 'red', color: 'white' }} variant="contained" size="small" onClick={() => handleDelete(id)}>Удалить</Button>
+                                    </Box>
+                                    <MyInput label="Название" variant="outlined" value={title} onChange={handleText(id)} />
+                                    <MyInput label="Варианты" variant="outlined" value={description} onChange={handleText2(id)} />
+                                </Root>
+                                : ''}
+        </Box >
     )
 }
 

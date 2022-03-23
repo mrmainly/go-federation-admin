@@ -94,6 +94,21 @@ const RegistrationForm = () => {
                     required: false
                 })
                 break;
+            case 'checkbox':
+                newUserField = userField.concat({
+                    title: '',
+                    type: type,
+                    id: idUserField,
+                })
+                break;
+            case 'list':
+                newUserField = userField.concat({
+                    title: '',
+                    description: '',
+                    type: type,
+                    id: idUserField,
+                })
+                break;
             default:
                 break;
         }
@@ -119,7 +134,7 @@ const RegistrationForm = () => {
                     {/* <Form> */}
                     <Input label="Начало регистрации" variant="outlined" {...register('city')} />
                     <Input label="Окончание регистрации" variant="outlined" {...register('city')} />
-                    <Box sx={{ display: 'flex' }}>
+                    <Box sx={{ display: 'flex', mt: 2 }}>
                         <MyButton sx={{ bgcolor: '#67c23a' }} onClick={() => console.log(userField)}>Сохранить</MyButton>
                         <MyButton sx={{ ml: 1 }}>Предосмотр</MyButton>
                     </Box>
@@ -166,8 +181,8 @@ const RegistrationForm = () => {
                         <MenuItem onClick={() => adduserfield("user")}>Игрок</MenuItem>
                         <MenuItem onClick={() => adduserfield("textfield")}>Текстовое поле</MenuItem>
                         <MenuItem onClick={() => adduserfield("datePicker")}>Дата</MenuItem>
-                        {/* <MenuItem onClick={() => adduserfield()}>Список</MenuItem>
-                        <MenuItem onClick={() => adduserfield()}>Чекбокс</MenuItem> */}
+                        <MenuItem onClick={() => adduserfield("list")}>Список</MenuItem>
+                        <MenuItem onClick={() => adduserfield("checkbox")}>Чекбокс</MenuItem>
                     </Menu>
                 </GridInsideItem2>
             </Grid>
